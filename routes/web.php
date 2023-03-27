@@ -14,10 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/", function () {
-    $pages = ["Page 1", "Page 2", "Page 3", "Page 4"];
+    $pages = ["Page 1", "Page 2", "Page 3", "Page 4", "Page 5", "Page 6", "Page 7"];
+
+
     return view("home", compact("pages"));
 });
 
-// Route::get("/pages", function () {
-//     return view("pages.page1");
-// });
+Route::get("/pages/{index}", function ($index) {
+
+    $pages = ["Page 1", "Page 2", "Page 3", "Page 4", "Page 5", "Page 6", "Page 7"];
+
+    $page = $pages[$index];
+
+    return view("pages.page", compact("page"));
+})->name("page-details");

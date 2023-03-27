@@ -14,13 +14,14 @@
 <body class="bg-success bg-opacity-25">
 
     <!-- <h1>Hello World!</h1> -->
-    <nav class="navbar navbar-expand bg-success bg-opacity-50">
-        <div class=" container">
-            <div id="navbarNav">
-                <ul class="navbar-nav">
+
+    <nav class="navbar navbar-expand bg-success bg-opacity-50 mt-5">
+        <div class="container">
+            <div id="navbarNav" class="w-100">
+                <ul class="navbar-nav w-100 d-flex justify-content-around">
                     @foreach($pages as $page)
                     <li class="nav-item">
-                        <a class="nav-link" href="#"> {{ $page }} </a>
+                        <a class="nav-link" href="{{ route("page-details", ["index" => $loop->index]) }}"> {{ $page }} </a>
                     </li>
                     @endforeach
                 </ul>
